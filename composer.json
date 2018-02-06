@@ -1,0 +1,12 @@
+{
+  "name": "tostrander/328/pets2",
+  "authors": [
+    {
+      "name": "Tina Ostrander",
+      "email": "tostrander@greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
