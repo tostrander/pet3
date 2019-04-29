@@ -28,7 +28,7 @@
 
 <div class="container">
     <div class="row">
-        <form action="./results" method="post" class="form-horizontal">
+        <form action="#" method="post" class="form-horizontal">
             <br>
             <!-- color -->
             <div class="form-group">
@@ -36,18 +36,21 @@
                        for="color">Color</label>
 
                 <div class="col-sm-4">
+                    <check if="{{ isset(@errors['color']) }}">
+                        <p>{{ @errors['color'] }}</p>
+                    </check>
                     <select class="form-control" name="color" id="color">
-                        <option>purple</option>
-                        <option>pink</option>
-                        <option>green</option>
-                        <option>blue</option>
+                        <option>--Select--</option>
+                        <repeat group="{{ @colors }}" value="{{ @colorOption }}">
+                            <option> {{ @colorOption }}</option>
+                        </repeat>
                     </select>
                 </div>
             </div>
 
             <div class="col-xs-4 col-xs-offset-2">
                 <input class="form-control btn btn-default"
-                       type="submit" value="Submit">
+                       type="submit" value="Submit" name="submit">
             </div>
         </form>
     </div>

@@ -29,21 +29,25 @@
 <div class="container">
     <br>
     <div class="row">
-        <form action="./form2" method="post" class="form-horizontal">
+        <form action="#" method="post" class="form-horizontal">
 
             <!-- animal -->
             <div class="form-group">
                 <label for="title" class="col-sm-2 control-label">Animal</label>
 
                 <div class="col-sm-4">
-                    <input class="form-control" type="text" name="animal" id="animal">
+                    <check if="{{ isset(@errors['animal']) }}">
+                        <p>{{ @errors['animal'] }}</p>
+                    </check>
+                    <input class="form-control" type="text" name="animal" id="animal"
+                           value="{{ @SESSION['animal'] }}">
                 </div>
             </div>
 
 
             <div class="col-xs-2 col-xs-offset-2">
                 <input class="form-control btn btn-default"
-                       type="submit" value="Next">
+                       type="submit" value="Next" name="next">
             </div>
         </form>
     </div>
